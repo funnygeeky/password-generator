@@ -7,6 +7,6 @@ The password generator prompts the user to choose a password length and confirm 
 3. User numbers in the password
 4. Use symbols in the password
 
-Functions math.random and math.floor will be used to select the characters from arrays of data.
+For loops will be used to select random characters from arrays of data.
 
 An event listener will detect when the "Generate Password" button has been clicked after all the user inputs have been entered from prompts.

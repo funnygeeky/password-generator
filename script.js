@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var generateBtn = document.getElementById("generate");
+
 //Listen for the Button click
 //document.getElementById("generateBtn").addEventListener("click")
 //Declare arrays for password character types:
@@ -8,34 +8,35 @@ var Upper = ['A','B','C', 'D','E','F','G','H','I','J','K','L','M','N','O','P','Q
 var Lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var Special = ['#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','['];
 var Numeric = [0,1,2,4,5,6,7,8,9];
-
-function generateInputs (){
-//Get password length
+function length ()
+//Get password length 
   var passwordLength=parseInt(prompt("How many characters would you like your password to have?"));
 //Test password length
+{
   if (passwordLength < 8)
-  {
   alert("The password needs to have at least 8 characters.");
-return;
-  }
-  {
+  return;
+}
+  
   if(passwordLength > 128)
   alert("The password must be less than 128 characters.");
 return;
-  }
+  
+
+  
 
 //Prompts to confirm character type inputs
 
-var wantSpecial = alert("Do you want to include special characters?");
-var wantNumeric = alert("Do you want to include numbers?");
-var wantLowercase = alert("Do you want to include lowercase characters?");
-var wantUppercase = alert("Do you want to include uppercase characters?");
+var wantSpecial = confirm("Do you want to include special characters?");
+var wantNumeric = confirm("Do you want to include numbers?");
+var wantLowercase = confirm("Do you want to include lowercase characters?");
+var wantUppercase = confirm("Do you want to include uppercase characters?");
 
 If (!wantSpecial && !wantNumeric && !wantLowercase && !wantUppercase) 
 {
   alert("Your password must contain at least one special, numeric, lowercase, or uppercase character type.");
 }
-}
+
 
 
 //Put Password inputs into a variable to generate a password
@@ -79,7 +80,7 @@ if (passwordInputs.upperCase) {
   }
 }
 }
-
+//Password Text to be displayed
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
